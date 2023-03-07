@@ -5,7 +5,7 @@ module.exports = (sequelize, Sequelize) => {
         timestamps: false
     });
     Type.associate = function(models) {
-        Type.belongsToMany(models.Meals, {through: models.MealTypes});
+        Type.belongsToMany(models.Meal, {through: "MealTypes"});
     
     };
     return Type

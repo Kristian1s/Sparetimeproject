@@ -17,81 +17,32 @@
         <div class="row px-3 py-1 w-100">
           <span class="col py-1 bg-noroff">Id</span>
           <span class="col py-1 bg-noroff">Name</span>
-          <span class="col py-1 bg-noroff">Species</span>
-          <span class="col py-1 bg-noroff">Birthday</span>
-          <span class="col py-1 bg-noroff">Temperament</span>
-          <span class="col py-1 bg-noroff">Size</span>
-          <span class="col py-1 bg-noroff">Age</span>
-          <span class="col py-1 bg-noroff">Adopted</span>
-          <span class="col py-1 bg-noroff">Options</span>
+          <span class="col py-1 bg-noroff">Type</span>
+          <span class="col py-1 bg-noroff">Calories</span>
+          <span class="col py-1 bg-noroff">Protein</span>
         </div>
-        <% animals.forEach(function(animal) { %>
+        <% meals.forEach(function(meal) { %>
           <div class="row px-3 py-1 w-100">
             <span class="col py-1 bg-light ">
-              <%=animal.id%>
+              <%=meal.id%>
             </span>
             <span class="col py-1 bg-light">
-              <%=animal.Name%>
+              <%=meal.Name%>
             </span>
             <span class="col py-1 bg-light">
-              <%=animal.Species.Species%>
+              <%=meal.Type%>
             </span>
             <span class="col py-1 bg-light">
-              <%=new Date(animal.Birthday).toLocaleDateString()%>
-            </span>
+              <%=meal.Calories%>
             </span>
             <span class="col py-1 bg-light">
-            <% animal.Temperaments.forEach(function(temperament) { %>
-              
-                <%= temperament.TemperamentName %>
-              
-            <% }); %>
-          </span>
+              <%=meal.Protein%>
+            </span>
             
-            
-            <span class="col py-1 bg-light">
-              <%= animal.Size.SizeName %>
-            </span>
-
-
-
-
-            <span class="col py-1 bg-light">
-              <% var diff=(new Date() - new Date(animal.Birthday)) / (1000 * 60 * 60 * 24 * 365);
-                 diff=Math.floor(diff);
-                 if (diff===1) { %>
-                <%=diff%> year
-              <% } else { %>
-                <%=diff%> years
-              <% } %>
-            </span>
-            <span class="col py-1 bg-light">
-              <%=animal.Adopted%>
-            </span>
-
-            <%if(!user){%>
-              <span class="col py-1 bg-light text-center">
-                sign in to adopt
-              </span>
-            <%}else if(user.role ==="member" || user.role === "admin"){%>
-                  <span class="col py-1 bg-light text-center">
-         
-                        <button class="btn-sm btn-warning" onclick="adoptAnimal('/animals/adopt','<%=animal.id%>','<%=user.id%>')">Adopt</button>
-              
-                    <%if(user.role === "admin"){%>
-                            <span class="col py-1 bg-light text-center">
-         
-              
-                                    <button class="btn-sm btn-danger" onclick="deleteAdoption('/animals/deleteAdoption','<%=animal.id%>')">Cancel Adoption</button>
-                              
-                        <%}%>
-            </span>
-            <%}%>
-           
-            
+            <%})%>
           </div>
-          <% }); %>
-            <hr>
+       
+      
            
       </div>
     </div>
