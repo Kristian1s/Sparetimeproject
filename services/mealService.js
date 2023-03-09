@@ -8,20 +8,12 @@ class MealService {
     async get() {
         return this.Meal.findAll({
           where: {},
-         /*  include: [
-          {
-            model: this.Size
-           },
-           {
-            model: this.Species,
-        
-           },
-           {
-            model: this.Temperament,
-            through: this.AnimalTemperament
-          
-              }
-            ] */
+          include: [
+            {
+              model: this.Type
+            }
+          ]
+      
           })
       };
     
@@ -29,13 +21,6 @@ class MealService {
         return this.Meal.destroy(
              { where: { id: mealId } });
     }
-
-   /*  async updateMeal(mealId) {
-        return this.Meal.update(
-            { Adopted: "Available" },
-             { where: { id: animalid } });
-    } */
-
 
     
   

@@ -10,16 +10,16 @@
 </head>
 
 <body>
-  <%- include('./partials/navbar.ejs', {user: user}) %>
+  <%- include('./partials/navbar.ejs', {user: user})%>
     <div class="container-fluid mt-5">
-      <h2 class="p-3 text-center">Animals for Adoption</h2>
+      <h2 class="p-3 text-center">Meals</h2>
       <div class="list-group">
         <div class="row px-3 py-1 w-100">
           <span class="col py-1 bg-noroff">Id</span>
           <span class="col py-1 bg-noroff">Name</span>
           <span class="col py-1 bg-noroff">Type</span>
           <span class="col py-1 bg-noroff">Calories</span>
-          <span class="col py-1 bg-noroff">Protein</span>
+          <span class="col py-1 bg-noroff">Protein (g)</span>
         </div>
         <% meals.forEach(function(meal) { %>
           <div class="row px-3 py-1 w-100">
@@ -30,21 +30,23 @@
               <%=meal.Name%>
             </span>
             <span class="col py-1 bg-light">
-              <%=meal.Type%>
+             
+              <%=meal.Type.Name%>
+          
             </span>
             <span class="col py-1 bg-light">
               <%=meal.Calories%>
             </span>
             <span class="col py-1 bg-light">
-              <%=meal.Protein%>
+              <%=meal.Protein%> 
             </span>
-            
-            <%})%>
           </div>
+            <%})%>
+        
        
       
            
-      </div>
+    
     </div>
     
 </body>

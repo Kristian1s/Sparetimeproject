@@ -1,0 +1,41 @@
+<nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-light position-fixed w-100 fixed-top">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/animals">Meal Tracker</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/meals">Meals</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/species">blank</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/temperament">blank</a>
+                </li>
+                <% if (!user) { console.log(user)%>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/login">Sign in</a>
+                    </li>
+                    <% } else {%>
+                        <li class="nav-item">
+                            <p class="nav-link text-center">Hello <%= user.username %>
+                            </p>
+                        </li>
+                        <li class="nav-item">
+  <form action="/logout" method="post">
+    <input type="hidden" name="_method" value="POST">
+    <button type="submit" class="nav-link">Logout</button>
+  </form>
+</li>
+                        <% }; %>
+            </ul>
+        </div>
+    </div>
+</nav>
