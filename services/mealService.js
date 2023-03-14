@@ -22,7 +22,14 @@ class MealService {
              { where: { id: mealId } });
     }
 
-    
+    async createMeal(name, type, calories, protein){
+      return this.Meal.create({
+        Name: name,
+        TypeId: type,
+        Calories: calories,
+        Protein: protein
+      })
+    }
   
 
 }

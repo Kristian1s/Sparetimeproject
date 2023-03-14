@@ -12,4 +12,12 @@ router.get('/', async function(req, res, next) {
   res.render('meals', {meals: meals, user: req.user});
 });
 
+router.post('/', async function(req,res,next){
+ let name = req.body.MealName;
+ let type = req.body.MealType;
+ let calories = req.body.Calories;
+ let protein = req.body.Protein;
+ await mealService.createMeal(name, type, calories, protein)
+ res.end();
+})
 module.exports = router;

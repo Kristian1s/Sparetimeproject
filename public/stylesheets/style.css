@@ -1,8 +1,39 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+.header {
+  position: relative;
+  height: 600px; /* adjust height to your preference */
+  text-align: center;
 }
 
-a {
-  color: #00B7FF;
+.header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("../images/healthy-food.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  filter: blur(3px);
 }
+
+.header-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 400;
+  color: white; /* set text color to white */
+  font-size: 120px; /* adjust font size to your preference */
+  text-shadow: 4px 4px 8px rgba(0,0,0,0.5); /* add a text shadow for contrast */
+  outline: 3px;
+}
+
+#addMeal{
+  float:right
+}
+
+
+
