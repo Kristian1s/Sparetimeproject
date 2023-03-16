@@ -1,3 +1,4 @@
+require('dotenv').config();
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -16,8 +17,22 @@ var profileRouter = require('./routes/profile');
 var db = require("./models");
 db.sequelize.sync({ force: false })
 
+const { auth } = require('express-openid-connect');
+const config = {
+authRequired: false,
+auth0Logout: true
+};
+
 
 var app = express();
+
+config.baseURL = `http://localhost:${process.env.PORT}`;
+app.use(auth(config));
+
+app.use(function (req, res, next) {
+  res.locals.user = req.oidc.user;
+  next();
+})
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

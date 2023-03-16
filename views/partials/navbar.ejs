@@ -16,25 +16,17 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/profile">Profile</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/temperament">blank</a>
-                </li>
-                <% if (!user) { console.log(user)%>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/login">Sign in</a>
+                <% if (locals.isAuthenticated) { %>
+                        <li class="nav-item">
+                        <a class="nav-link" href="/logout">Sign out</a>
                     </li>
-                    <% } else {%>
-                        <li class="nav-item">
-                            <p class="nav-link text-center">Hello <%= user.username %>
-                            </p>
+                    <% } else { %>
+                            <li class="nav-item">
+                            <a class="nav-link" href="/login">Sign in</a>
                         </li>
-                        <li class="nav-item">
-  <form action="/logout" method="post">
-    <input type="hidden" name="_method" value="POST">
-    <button type="submit" class="nav-link">Logout</button>
-  </form>
-</li>
-                        <% }; %>
+                    <% } %>
+                    
+                
             </ul>
         </div>
     </div>
