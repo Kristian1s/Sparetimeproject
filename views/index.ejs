@@ -12,7 +12,11 @@
 
     </div>
     
-    <%- include('./partials/navbar.ejs', {user: user})%>
+    <%- include('./partials/navbar.ejs')%>
     <p>Welcome to <%= title %></p>
+
+
+
+    <p>Welcome  <%= user.nickname %></p>
   </body>
 </html>

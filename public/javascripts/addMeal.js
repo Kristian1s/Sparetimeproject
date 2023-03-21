@@ -2,7 +2,7 @@ async function addMeal(url){
 
     // Prompts the user for the new meal info
     mealName = prompt("Meal name:")
-    mealType = prompt("Meal type:")
+    mealType = prompt("Meal type: (breakfast, lunch, snack, dinner, drink)")
     calories = prompt("Number of calories:")
     protein  = prompt("Number of protein in grams:")
 

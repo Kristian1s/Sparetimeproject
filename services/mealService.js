@@ -5,6 +5,7 @@ class MealService {
         this.Type = db.Type;
        
     }
+    //Get all meals (with type)
     async get() {
         return this.Meal.findAll({
           where: {},
@@ -16,12 +17,15 @@ class MealService {
       
           })
       };
-    
-      async removeMeal(mealId) {
+  
+      //Delete a meal with a given ID
+    async removeMeal(mealId) {
         return this.Meal.destroy(
              { where: { id: mealId } });
     }
 
+
+    //Create new meal
     async createMeal(name, type, calories, protein){
       return this.Meal.create({
         Name: name,

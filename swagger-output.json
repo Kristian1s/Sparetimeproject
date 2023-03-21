@@ -36,8 +36,21 @@
         "responses": {}
       },
       "post": {
-        "description": "",
+        "tags": [
+          "Meals"
+        ],
+        "description": "Creates a new meal.",
         "parameters": [
+          {
+            "name": "body",
+            "typeId": "body",
+            "calories": "body",
+            "protein": "body",
+            "schema": {
+              "$ref": "#/definitions/Meal"
+            },
+            "in": "query"
+          },
           {
             "name": "body",
             "in": "body",
@@ -69,6 +82,35 @@
         "parameters": [],
         "responses": {}
       }
+    }
+  },
+  "definitions": {
+    "Meal": {
+      "type": "object",
+      "properties": {
+        "Name": {
+          "type": "string",
+          "example": "Pasta bolognese"
+        },
+        "TypeId": {
+          "type": "number",
+          "example": 3
+        },
+        "Calories": {
+          "type": "number",
+          "example": 540
+        },
+        "Protein": {
+          "type": "number",
+          "example": 40
+        }
+      },
+      "required": [
+        "Name",
+        "TypeId",
+        "Calories",
+        "Protein"
+      ]
     }
   }
 }

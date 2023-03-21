@@ -1,6 +1,6 @@
 .header {
   position: relative;
-  height: 600px; /* adjust height to your preference */
+  height: 300px; 
   text-align: center;
 }
 
@@ -30,10 +30,16 @@
   text-shadow: 4px 4px 8px rgba(0,0,0,0.5); /* add a text shadow for contrast */
   outline: 3px;
 }
-
+#nickName{
+  font-size: small;
+  color: grey;
+}
 #addMeal{
   float:right
 }
 
+body {
+  padding-top: 80px;
+}
 
 

@@ -1,6 +1,7 @@
 <nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-light position-fixed w-100 fixed-top">
     <div class="container-fluid">
         <a class="navbar-brand" href="/">Meal Tracker</a>
+        <a id="nickName">Signed in as <%=user.nickname%></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -16,6 +17,10 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/profile">Profile</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/doc/#/">Documentation</a>
+                </li>
+
                 <% if (locals.isAuthenticated) { %>
                         <li class="nav-item">
                         <a class="nav-link" href="/logout">Sign out</a>
@@ -25,7 +30,7 @@
                             <a class="nav-link" href="/login">Sign in</a>
                         </li>
                     <% } %>
-                    
+                   
                 
             </ul>
         </div>
