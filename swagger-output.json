@@ -74,6 +74,24 @@
           }
         ],
         "responses": {}
+      },
+      "delete": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "MealId": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {}
       }
     },
     "/profile/": {

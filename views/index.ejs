@@ -16,7 +16,10 @@
     <p>Welcome to <%= title %></p>
 
 
-
-    <p>Welcome  <%= user.nickname %></p>
+    <% if (locals.isAuthenticated) { %>
+      <p>Welcome  <%=  user.nickname  %></p>
+      <%}%>
+          
+   
   </body>
 </html>

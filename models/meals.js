@@ -1,3 +1,5 @@
+//Defining Meal object for relationaldatabase
+
 module.exports = (sequelize, Sequelize) => {
     const Meal = sequelize.define('Meal', {
         Name: Sequelize.DataTypes.STRING,

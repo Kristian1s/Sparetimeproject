@@ -14,7 +14,7 @@ const connection = {
   dialectmodel: process.env.DIALECTMODEL,
 };
 
-//establishing connection with database and adding models to db object preparing for CRUD operations etc.
+//establishing connection with database and adding models to db object preparing for CRUD operations
 const sequelize = new Sequelize(connection);
 const db = {}
 db.sequelize = sequelize

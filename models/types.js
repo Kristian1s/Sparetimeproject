@@ -1,3 +1,5 @@
+//Defining type object for relationaldatabase
+
 module.exports = (sequelize, Sequelize) => {
     const Type = sequelize.define('Type', {
         Name: Sequelize.DataTypes.STRING

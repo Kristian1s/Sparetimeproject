@@ -1,7 +1,11 @@
 <nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-light position-fixed w-100 fixed-top">
     <div class="container-fluid">
         <a class="navbar-brand" href="/">Meal Tracker</a>
-        <a id="nickName">Signed in as <%=user.nickname%></a>
+        <% if (locals.isAuthenticated) { %>
+        <a id="nickName">Signed in as <%= user.nickname%></a>
+        <%}else{%>
+            <a id="nickName">You are not signed in</a>
+        <%}%>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>

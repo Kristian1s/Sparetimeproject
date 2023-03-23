@@ -5,7 +5,7 @@ var MealService = require("../services/mealService");
 var mealService = new MealService(db);
 
 
-/* GET home page. */
+// GET home page. 
 router.get('/', async function(req, res, next) {
     const meals = await mealService.get()
   res.render('meals',
@@ -14,6 +14,8 @@ router.get('/', async function(req, res, next) {
   });
 });
 
+
+// Adds new Meal
 router.post('/', async function(req,res,next){
   // #swagger.tags = ['Meals']
   // #swagger.description = "Creates a new meal."
@@ -33,5 +35,12 @@ router.post('/', async function(req,res,next){
  let protein = req.body.Protein;
  await mealService.createMeal(name, type, calories, protein)
  res.end();
+})
+
+//Deletes meal
+router.delete('/', async function(req,res,next){
+  const mealId = req.body.MealId;
+  await mealService.removeMeal(mealId)
+  res.end();
 })
 module.exports = router;

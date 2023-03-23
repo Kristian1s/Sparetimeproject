@@ -12,8 +12,6 @@ router.get('/', function(req, res, next) {
 });
 
 
-module.exports = router;
-
 
 router.get('/login',requiresAuth , function(req, res, next) {
     res.render('login', {

@@ -25,17 +25,18 @@
   transform: translate(-50%, -50%);
   font-family: 'Courier New', Courier, monospace;
   font-weight: 400;
-  color: white; /* set text color to white */
-  font-size: 120px; /* adjust font size to your preference */
-  text-shadow: 4px 4px 8px rgba(0,0,0,0.5); /* add a text shadow for contrast */
+  color: white; 
+  font-size: 120px; 
+  text-shadow: 4px 4px 8px rgba(0,0,0,0.5);
   outline: 3px;
 }
 #nickName{
   font-size: small;
   color: grey;
 }
-#addMeal{
-  float:right
+#Meal{
+  float:right;
+  margin-left: 10px;
 }
 
 body {

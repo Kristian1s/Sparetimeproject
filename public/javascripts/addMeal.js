@@ -1,3 +1,5 @@
+//lets you add a new meal
+
 async function addMeal(url){
 
     // Prompts the user for the new meal info

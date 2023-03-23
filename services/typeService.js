@@ -11,20 +11,6 @@ class TypeService {
           })
       };
     
-     /*  async removeMeal(mealId) {
-        return this.Meal.destroy(
-             { where: { id: mealId } });
-    } */
-
-   /*  async updateMeal(mealId) {
-        return this.Meal.update(
-            { Adopted: "Available" },
-             { where: { id: animalid } });
-    } */
-
-
-    
-  
 
 }
 module.exports = TypeService;
