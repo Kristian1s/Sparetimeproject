@@ -4,17 +4,18 @@
  
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel='stylesheet' href='../stylesheets/style.css' />
-    <script type="text/javascript" src="../javascripts/common.js"></script>
+    <script type="text/javascript" src="../javascripts/searchbar.js"></script>
   </head>
   <body>
  <div class="container">
 
     <p>Personal profile with daily consumption and favorite foods should go here.</p>
-    
+    <p>Search up foods, add foods, it counts towards daily total calorie/protein intake</p>
     <%- include('./partials/navbar.ejs')%>
     <div class="searchField">
     <div class="searchbar">
-      <input type="text" placeholder="Search meals">
+      <input class="searchInput" type="text" placeholder="Search for food">
+            <button class="searchButton" onclick="searchFood('/')">Search</button>
     </div>
   </div>
 </div>
