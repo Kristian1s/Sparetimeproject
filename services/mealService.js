@@ -35,7 +35,14 @@ class MealService {
         Protein: protein
       })
     }
-  
-
+  async findMeal(searchString){
+    return this.Meal.findAll({
+      where: {
+        name: {
+          [Op.like]: searchString + '%'
+        }
+      }
+    })
+  }
 }
 module.exports = MealService;

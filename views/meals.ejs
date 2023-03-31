@@ -59,17 +59,21 @@
             <span class="col py-1 bg-light">
                 <button class="btn btn-danger" id="Meal" onclick="deleteMeal('/meals',<%=meal.id%>)">Delete meal</button>
               </span>
-                <%}%>
+              <%}%>
               
           
           
         </div>
             <%})%>
 
-        <div>
-          <button class="btn btn-success" id="Meal" onclick="addMeal('/meals')">Add new meal</button>
-          
-        </div>
+
+            <% if (locals.isAuthenticated) { %>
+              <div>
+                <button class="btn btn-success" id="Meal" onclick="addMeal('/meals')">Add new meal</button>
+                
+              </div>
+                <%}%>
+       
        
       
            
