@@ -1,37 +1,45 @@
-//unfinished,
-//todo Search based on input that queries the database for meals "a%" etc
-async function searchFood(url){
-    document.querySelector(".searchInput").addEventListener("keyup", function(event){
-    });
-    let searchInput = document.querySelector(".searchInput").value.toLowerCase();
-
-        await fetch(url, {
-             method: 'GET',
-             headers: {
-                 'Content-type': 'application/json'
-             },
-             body: JSON.stringify({
-                 search: searchInput,
-                
-                 
-             })
-         }).then((response) => {
-             if (response.ok) {
-                 const resData = 'Meal deleted';
-                 alert(resData);
-                 location.reload()
-                 return Promise.resolve(resData);
-             }
-             return Promise.reject(response);
-           })
-         .catch((response) => {
-             alert(response.statusText);
-         }); 
-          
-         }
-     
-    
-
-
-
+async function searchFood(url) {
+    const searchInput = document.querySelector('.searchInput').value.toLowerCase();
+    const response = await fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-type': 'application/json'
+      },
+      body: JSON.stringify({
+        search: searchInput
+      })
+    }).then((response) => {
+    if (response.ok) {
+      return response.json();
+    }
+    return Promise.reject(response);
+  }).then((meals) => {
+    renderMeals(meals);
+  }).catch((response) => {
+    alert(response.statusText);
+  });
+    if (response.ok) {
+      const meals = await response.json(); // Convert the response body to a JavaScript object
+      renderMeals(meals); // Call a new function to render the meals
+    } else {
+      alert('Search failed');
+    }
+  }
+  
+  function renderMeals(meals) {
+    const resultsDiv = document.querySelector('.results');
+    let html = '';
+  
+    if (meals.length > 0) {
+      html = '<table class="col py-1 bg-light">';
+      meals.forEach(meal => {
+        html += `<tr class="border"><td>${meal.Name}</td></tr>`;
+      });
+      html += '</table>';
+    } else {
+      html = 'No meals found';
+    }
+  
+    resultsDiv.innerHTML = html;
+  }
    

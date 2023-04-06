@@ -102,10 +102,30 @@
       }
     },
     "/profile/findFood": {
-      "get": {
+      "post": {
         "description": "",
-        "parameters": [],
-        "responses": {}
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "search": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
       }
     }
   },

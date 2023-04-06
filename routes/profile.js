@@ -13,9 +13,12 @@ router.get('/',requiresAuth(), function(req, res, next) {
   });
 });
 
-router.get('/findFood', async function(req,res,next){
+router.post('/findFood', async function(req,res,next){
   let searchString = req.body.search 
-  await mealService.findMeal(searchString)
+  let meals= await mealService.findMeal(searchString)
+  res.setHeader('Content-Type', 'application/json');
+  res.status(200).send(JSON.stringify(meals));
+
 })
 
 module.exports = router;

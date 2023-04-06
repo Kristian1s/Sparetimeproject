@@ -7,6 +7,7 @@
     <script type="text/javascript" src="../javascripts/searchbar.js"></script>
   </head>
   <body>
+    <% meals = []; %> 
  <div class="container">
 
     <p>Personal profile with daily consumption and favorite foods should go here.</p>
@@ -15,8 +16,12 @@
     <div class="searchField">
     <div class="searchbar">
       <input class="searchInput" type="text" placeholder="Search for food">
-            <button class="searchButton" onclick="searchFood('/findFood')">Search</button>
+            <button class="searchButton" onclick="searchFood('/profile/findFood')">Search</button>
     </div>
+  </div>
+  <div class="container">
+    <div class="results">
+ 
   </div>
 </div>
   </body>

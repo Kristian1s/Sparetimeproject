@@ -1,4 +1,5 @@
 //Mealclass to preform CRUD operations on database rows
+const { Op } = require("sequelize");
 class MealService {
     constructor(db) {
         this.client = db.sequelize;
