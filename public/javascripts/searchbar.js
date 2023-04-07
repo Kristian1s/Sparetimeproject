@@ -1,3 +1,4 @@
+//Post request to get meals matching the given search string
 async function searchFood(url) {
     const searchInput = document.querySelector('.searchInput').value.toLowerCase();
     const response = await fetch(url, {
@@ -19,8 +20,8 @@ async function searchFood(url) {
     alert(response.statusText);
   });
     if (response.ok) {
-      const meals = await response.json(); // Convert the response body to a JavaScript object
-      renderMeals(meals); // Call a new function to render the meals
+      const meals = await response.json(); 
+      renderMeals(meals); 
     } else {
       alert('Search failed');
     }

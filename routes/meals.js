@@ -20,10 +20,10 @@ router.post('/', async function(req,res,next){
   // #swagger.tags = ['Meals']
   // #swagger.description = "Creates a new meal."
   /* #swagger.parameters['body'] =  {
-    "name": "body",
-    "typeId": "body",
-    "calories": "body",
-    "protein": "body",
+    "name": "string",
+    "type": "string",
+    "calories": "integer",
+    "protein": "integer",
       "schema": {
         $ref: "#/definitions/Meal"
       }

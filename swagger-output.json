@@ -42,10 +42,10 @@
         "description": "Creates a new meal.",
         "parameters": [
           {
-            "name": "body",
-            "typeId": "body",
-            "calories": "body",
-            "protein": "body",
+            "name": "string",
+            "type": "string",
+            "calories": "integer",
+            "protein": "integer",
             "schema": {
               "$ref": "#/definitions/Meal"
             },
@@ -137,9 +137,9 @@
           "type": "string",
           "example": "Pasta bolognese"
         },
-        "TypeId": {
-          "type": "number",
-          "example": 3
+        "Type": {
+          "type": "string",
+          "example": "Dinner"
         },
         "Calories": {
           "type": "number",
@@ -152,7 +152,7 @@
       },
       "required": [
         "Name",
-        "TypeId",
+        "Type",
         "Calories",
         "Protein"
       ]

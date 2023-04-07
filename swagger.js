@@ -11,7 +11,7 @@ const doc = {
     definitions: {
         Meal: {
             $Name: "Pasta bolognese",
-            $TypeId: 3,
+            $Type: "Dinner",
             $Calories: 540,
             $Protein: 40
         }
