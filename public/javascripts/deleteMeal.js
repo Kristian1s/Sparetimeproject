@@ -4,11 +4,6 @@ async function deleteMeal(url, mealId){
         headers: {
             'Content-type': 'application/json'
         },
-        body: JSON.stringify({
-            MealId: mealId,
-           
-            
-        })
     }).then((response) => {
         if (response.ok) {
             const resData = 'Meal deleted';

@@ -38,9 +38,9 @@ router.post('/', async function(req,res,next){
 })
 
 //Deletes meal
-router.delete('/', async function(req,res,next){
-  const mealId = req.body.MealId;
-  await mealService.removeMeal(mealId)
+router.delete('/:id', async function(req, res, next) {
+  const mealId = req.params.id;
+  await mealService.removeMeal(mealId);
   res.end();
-})
+});
 module.exports = router;

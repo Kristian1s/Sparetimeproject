@@ -5,7 +5,7 @@ var MealService = require("../services/mealService");
 var mealService = new MealService(db);
 const { requiresAuth } = require('express-openid-connect');
 
-/* GET home page. */
+// GET home page. 
 router.get('/',requiresAuth(), function(req, res, next) {
   res.render('profile', {
     title: 'MealTracker',
@@ -13,6 +13,7 @@ router.get('/',requiresAuth(), function(req, res, next) {
   });
 });
 
+// Find meal mathing serachString
 router.post('/findFood', async function(req,res,next){
   let searchString = req.body.search 
   let meals= await mealService.findMeal(searchString)
