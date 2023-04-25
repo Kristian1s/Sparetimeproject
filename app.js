@@ -16,23 +16,32 @@ var profileRouter = require('./routes/profile');
 
 var db = require("./models");
 db.sequelize.sync({ force: false })
-
-const { auth } = require('express-openid-connect');
-const config = {
-authRequired: false,
-auth0Logout: true
-};
-
-
 var app = express();
 
-config.baseURL = `http://localhost:${process.env.PORT}`;
+
+const { auth } = require('express-openid-connect');
+
+const config = {
+  authRequired: false,
+  auth0Logout: true,
+  secret: 'a long, randomly-generated string stored in env',
+  baseURL: 'http://localhost:3000',
+  clientID: 'HCOB20wF0g3C1hoCeLkTLbZmyYncRK1e',
+  issuerBaseURL: 'https://dev-hyspsddpa65uyong.us.auth0.com'
+};
+
+// auth router attaches /login, /logout, and /callback routes to the baseURL
 app.use(auth(config));
 
 app.use(function (req, res, next) {
   res.locals.user = req.oidc.user;
   next();
 })
+
+
+
+
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -59,7 +68,11 @@ app.use('/doc', swaggerUi.serve, swaggerUi.setup(swaggerFile))
 app.use(function(req, res, next) {
   next(createError(404));
 });
+// req.isAuthenticated is provided from the auth router
 
+app.get('/', (req, res) => {
+  res.send(req.oidc.isAuthenticated() ? 'Logged in' : 'Logged out');
+});
 
 
 // error handler
